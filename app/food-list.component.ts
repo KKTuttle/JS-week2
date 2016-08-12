@@ -4,12 +4,13 @@ import { FoodComponent } from './food.component';
 import { NewFoodComponent } from './new-food.component';
 import { EditFoodDetailsComponent } from './edit-food-details.component';
 import { CaloriesPipe } from './calories.pipe';
+import { DayPipe } from './day.pipe';
 
 @Component ({
   selector: 'food-list',
   inputs: ['foodList'],
   outputs: ['onFoodSelect'],
-  pipes:[CaloriesPipe],
+  pipes:[CaloriesPipe, DayPipe],
   directives:[FoodComponent, NewFoodComponent, EditFoodDetailsComponent],
   template:`
     <select (change)='onChange($event.target.value)'>
@@ -18,7 +19,18 @@ import { CaloriesPipe } from './calories.pipe';
       <option value = 'under500'>Under 500 calories</option>
     </select>
 
-    <food-display *ngFor= '#currentFood of foodList | calories:filterCalories'
+    <select (change)='onChangeDay($event.target.value)'>
+      <option value = 'all'>All</option>
+      <option value = 'Monday'>Monday</option>
+      <option value = 'Tuesday'>Tuesday</option>
+      <option value = 'Wednesday'>Wednesday</option>
+      <option value = 'Thursday'>Thursday</option>
+      <option value = 'Friday'>Friday</option>
+      <option value = 'Saturday'>Saturday</option>
+      <option value = 'Sunday'>Sunday</option>
+    </select>
+
+    <food-display *ngFor= '#currentFood of foodList | calories:filterCalories | day:filterDay'
       (click)= 'foodClicked(currentFood)'
       [class.selected]= 'currentFood === selectedFood'
       [food]= 'currentFood'>
@@ -36,6 +48,7 @@ export class FoodListComponent {
   public onFoodSelect: EventEmitter<Food>;
   public selectedFood: Food;
   public filterCalories: string = 'all';
+  public filterDay: string = 'all';
 
   constructor() {
     this.onFoodSelect = new EventEmitter();
@@ -57,5 +70,8 @@ export class FoodListComponent {
   }
   onChange(filterOption) {
     this.filterCalories = filterOption;
-    }
+  }
+  onChangeDay(filterOption) {
+    this.filterDay = filterOption;
+  }
 }
