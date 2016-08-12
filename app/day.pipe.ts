@@ -12,43 +12,43 @@ export class DayPipe implements PipeTransform {
     var output: Food[] = [];
     if (selectedDay === 'Monday') {
       for (var i = 0; i <input.length; i++) {
-        if(input[i].day === 'Monday' ) {
+        if(input[i].day === 'Monday' || input[i].day === 'monday' ) {
           output.push(input[i]);
         }
       }
     }else if (selectedDay === 'Tuesday') {
       for (var i = 0; i <input.length; i++) {
-        if(input[i].day === 'Tuesday' ) {
+        if(input[i].day === 'Tuesday' || input[i].day === 'tuesday' ) {
           output.push(input[i]);
         }
       }
     }else if (selectedDay === 'Wednesday') {
       for (var i = 0; i <input.length; i++) {
-        if(input[i].day === 'Wednesday' ) {
+        if(input[i].day === 'Wednesday' || input[i].day === 'wednesday' ) {
           output.push(input[i]);
         }
       }
     }else if (selectedDay === 'Thursday') {
       for (var i = 0; i <input.length; i++) {
-        if(input[i].day === 'Thursday' ) {
+        if(input[i].day === 'Thursday' || input[i].day === 'thursday' ) {
           output.push(input[i]);
         }
       }
     }else if (selectedDay === 'Friday') {
       for (var i = 0; i <input.length; i++) {
-        if(input[i].day === 'Friday' ) {
+        if(input[i].day === 'Friday' || input[i].day === 'friday' ) {
           output.push(input[i]);
         }
       }
     }else if (selectedDay === 'Saturday') {
       for (var i = 0; i <input.length; i++) {
-        if(input[i].day === 'Saturday' ) {
+        if(input[i].day === 'Saturday' || input[i].day === 'saturday' ) {
           output.push(input[i]);
         }
       }
     }else if (selectedDay === 'Sunday') {
       for (var i = 0; i <input.length; i++) {
-        if(input[i].day === 'Sunday' ) {
+        if(input[i].day === 'Sunday' || input[i].day === 'sunday' ) {
           output.push(input[i]);
         }
       }
