@@ -20,7 +20,7 @@ import { Food } from './food.model';
       <label for = 'calories'>Calories</label>
       <input [ngModel]="food.calories" #newCalories>
 
-      <button (click) = 'editFood(newDay, newName, newLog, newCalories)'>Add</button>
+      <button (click) = 'editFood(newDay, newName, newLog, newCalories)'>Edit</button>
   </div>
   `
 
