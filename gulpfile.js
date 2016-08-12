@@ -31,10 +31,6 @@ var shell = require('gulp-shell');
 var sass = require('gulp-sass');
 var sourcemaps = require('gulp-sourcemaps');
 
-// extra
-var jshint = require('gulp-jshint');
-
-
 ////////////////////// TYPESCRIPT //////////////////////
 
 // clean task
@@ -102,15 +98,9 @@ gulp.task('serve', function() {
   gulp.watch(['app/*.ts'], ['tsBuild']); // typescript files change, compile then reload.
 });
 
-gulp.task('jsBuild', ['jshint'], function(){
+gulp.task('jsBuild', function(){
   browserSync.reload();
 });
-
-// added for jshintgulp.task('jshint', function(){
-// return gulp.src(['app/*.js'])
-// .pipe(jshint())
-// .pipe(jshint.reporter('default'));
-// });
 
 gulp.task('htmlBuild', function(){
   browserSync.reload();

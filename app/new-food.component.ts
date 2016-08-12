@@ -6,22 +6,26 @@ import { Food } from './food.model';
   selector: 'new-food',
   outputs:['onSubmitNewFood'],
   template:`
-  <div class = 'food-form'>
-    <h3>Add a new log to you meal tracker</h3>
-      <label for = 'day'>Day</label>
-      <input class ='form-control' placeholder = 'day' #newDay>
 
-      <label for = 'name'>Name</label>
-      <input class ='form-control' placeholder = 'name' #newName>
+    <div class = 'food-form col-sm-10'>
+      <h3>Add a new log to you meal tracker</h3>
+      <form class = 'form-group'>
+        <label for = 'day'>Day</label>
+        <input class ='form-control' placeholder = 'day' #newDay>
 
-      <label for = 'log'>Log</label>
-      <input class ='form-control' placeholder = 'log' #newLog>
+        <label for = 'name'>Name</label>
+        <input class ='form-control' placeholder = 'name' #newName>
 
-      <label for = 'calories'>Calories</label>
-      <input class ='form-control' placeholder = 'calories' #newCalories>
+        <label for = 'log'>Log</label>
+        <input class ='form-control' placeholder = 'log' #newLog>
 
-      <button (click) = 'addFood(newDay, newName, newLog, newCalories)'>Add</button>
-  </div>
+        <label for = 'calories'>Calories</label>
+        <input class ='form-control' placeholder = 'calories' #newCalories>
+
+        <button (click) = 'addFood(newDay, newName, newLog, newCalories)'>Add</button>
+      </form>
+    </div>
+
   `
 })
 
@@ -30,7 +34,7 @@ export class NewFoodComponent {
   constructor() {
     this.onSubmitNewFood = new EventEmitter;
   }
-  addFood(userDay: HTMLInputElement, userName: HTMLInputElement, userLog: HTMLInputElement, userCalories: HTMLInputElement) {
+  addFood(userDay: HTMLInputElement, userName: HTMLInputElement, userLog: HTMLTextAreaElement, userCalories: HTMLInputElement) {
     this.onSubmitNewFood.emit({
       day: userDay.value,
       name: userName.value,

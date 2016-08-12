@@ -6,8 +6,8 @@ import { FoodListComponent } from './food-list.component';
   selector: 'my-app',
   directives: [FoodListComponent],
   template:`
-    <div class = 'container'>
-      <h1>Personal Meal Tracker</h1>
+    <div class = 'container content'>
+      <h1 class= 'top-header'>Personal Meal Tracker</h1>
       <food-list
         [foodList]= 'foods'
         (onFoodSelect)= 'foodWasSelected($event)'>

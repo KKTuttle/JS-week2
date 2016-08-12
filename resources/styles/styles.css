@@ -1,0 +1,19 @@
+@import url(https://fonts.googleapis.com/css?family=Lobster);
+
+body {
+  background: url(http://fishbonespierandgrill.com/wp-content/uploads/2016/03/background-food.jpg) no-repeat center center fixed;
+  background-size: cover;
+  font-family: lobster;
+  /*: url("./../img/background-food.jpg") no-repeat center center fixed;*/
+}
+.top-header {
+  font-size: 40;
+  text-align: center;
+  /*font-weight: bold;*/
+  color: #D49093;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+.food-name {
+  text-decoration: underline;
+  text-shadow: -1px 0 yellow, 0 1px yellow, 1px 0 yellow, 0 -1px yellow;
+}
