@@ -23,7 +23,7 @@ export class AppComponent {
       new Food('Monday', 'Chicken', 'delicious lunch', 290, 0),
       new Food('Tuesday', 'Hamburger', 'burger week, couldn\'t hold myself', 550, 1),
       new Food('Wednesday', 'Pizza', 'too grease', 900, 2),
-      new Food('Thurday', 'Burrito', 'new favorite Mexican restaurant', 900, 3),
+      new Food('Thursday', 'Burrito', 'new favorite Mexican restaurant', 900, 3),
       new Food('Friday', 'Pub food', 'late dinner out', 750, 4)
     ];
   }
