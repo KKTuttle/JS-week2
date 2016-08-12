@@ -5,7 +5,7 @@ import { Food } from './food.model';
   selector: 'food-display',
   inputs:['food'],
   template:`
-    <h6>Day: {{ food.day}}</h6>
+    <h6>Day: {{ food.day }}</h6>
     <h6>Name: {{ food.name }}</h6>
     <h6>Log: {{ food.log }}</h6>
     <h6>Calories: {{ food.calories }}</h6>

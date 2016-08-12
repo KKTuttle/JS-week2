@@ -7,10 +7,10 @@ import { FoodListComponent } from './food-list.component';
   directives: [FoodListComponent],
   template:`
     <div class = 'container'>
-      <h1>Personal meal tracker</h1>
+      <h1>Personal Meal Tracker</h1>
       <food-list
-        [foodList] = 'foods'
-        (onFoodSelect) = 'foodWasSelected($event)'>
+        [foodList]= 'foods'
+        (onFoodSelect)= 'foodWasSelected($event)'>
       </food-list>
     </div>
   `
@@ -23,10 +23,11 @@ export class AppComponent {
       new Food('Monday', 'Chicken', 'delicious lunch', 290, 0),
       new Food('Tuesday', 'Hamburger', 'burger week, couldn\'t hold myself', 550, 1),
       new Food('Wednesday', 'Pizza', 'too grease', 900, 2),
-      new Food('Thurday', 'Pizza', 'too greasy', 900, 3),
-      new Food('Friday', '', 'late dinner out', 750, 4)
+      new Food('Thurday', 'Burrito', 'new favorite Mexican restaurant', 900, 3),
+      new Food('Friday', 'Pub food', 'late dinner out', 750, 4)
     ];
   }
   foodWasSelected(clickedFood: Food): void {
+    console.log('parent', clickedFood);
   }
 }

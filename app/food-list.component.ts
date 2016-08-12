@@ -5,16 +5,16 @@ import { NewFoodComponent } from './new-food.component';
 
 @Component ({
   selector: 'food-list',
-  inputs:['foodList'],
+  inputs: ['foodList'],
   outputs: ['onFoodSelect'],
   // pipes:[],
   directives:[FoodComponent, NewFoodComponent],
   template:`
-    <food-list *ngFor = '#currentFood of foodList'
+    <food-display *ngFor= '#currentFood of foodList'
       (click)= 'foodClicked(currentFood)'
       [class.selected]= 'currentFood === selectedFood'
       [food]= 'currentFood'>
-    </food-list>
+    </food-display>
     <new-food (onSubmitNewFood)= 'createFood($event.day, $event.name, $event.log, $event.calories)'></new-food>
   `
 })
@@ -25,7 +25,7 @@ export class FoodListComponent {
   public selectedFood: Food;
 
   constructor() {
-    this.onFoodSelect = new EventEmitter;
+    this.onFoodSelect = new EventEmitter();
   }
   createFood(day: string, name: string, log: string, calories: number): void {
     this.foodList.push (
@@ -33,7 +33,7 @@ export class FoodListComponent {
     );
   }
   foodClicked(clickedFood: Food): void {
-    this.selectedFood =clickedFood;
+    this.selectedFood = clickedFood;
     this.onFoodSelect.emit(clickedFood);
   }
 }
