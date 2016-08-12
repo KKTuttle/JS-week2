@@ -11,7 +11,6 @@ import { Food } from './food.model';
     <h6>Calories: {{ food.calories }}</h6>
     <hr>
   `
-
 })
 
 export class FoodComponent {

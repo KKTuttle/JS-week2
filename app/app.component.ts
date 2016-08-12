@@ -12,25 +12,21 @@ import { FoodListComponent } from './food-list.component';
         [foodList] = 'foods'
         (onFoodSelect) = 'foodWasSelected($event)'>
       </food-list>
-
     </div>
   `
 })
-
-
-
 
 export class AppComponent {
   public foods: Food[];
   constructor() {
     this.foods = [
-      new Food('Monday', 'Chicken', 'delicious lunch', 290),
-      new Food('Tuesday', 'Hamburger', 'burger week, couldn\'t hold myself', 550),
-      new Food('Wednesday', 'Pizza', 'too grease', 900),
-      new Food('Thurday', 'Pizza', 'too greasy', 900),
-      new Food('Friday', '', 'late dinner out', 750)
-    ]
+      new Food('Monday', 'Chicken', 'delicious lunch', 290, 0),
+      new Food('Tuesday', 'Hamburger', 'burger week, couldn\'t hold myself', 550, 1),
+      new Food('Wednesday', 'Pizza', 'too grease', 900, 2),
+      new Food('Thurday', 'Pizza', 'too greasy', 900, 3),
+      new Food('Friday', '', 'late dinner out', 750, 4)
+    ];
   }
-
-
+  foodWasSelected(clickedFood: Food): void {
+  }
 }
